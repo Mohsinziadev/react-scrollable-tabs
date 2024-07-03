@@ -53,7 +53,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab }) => {
             <div className="cursor-pointer" onClick={handlePrevTab}>
                 <img
                     src={leftArrow}
-                    className="h-6 w-4 mr-3"
+                    className="h-8 w-6 mr-3"
                     alt="Left Arrow"
                 />
             </div>
@@ -61,12 +61,13 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab }) => {
                 {tabs.map((tab) => (
                     <li
                         key={tab.value}
-                        className={`tab ${
+                        className={`tab flex flex-col items-center justify-center  gap-2 ${
                             activeTab === tab.value ? "active" : ""
                         }`}
                         onClick={() => handleTabClick(tab)}
                         data-tab={tab.value}
                     >
+                        <div>{tab.icon}</div>
                         {tab.label}
                     </li>
                 ))}
@@ -74,7 +75,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab }) => {
             <div className="cursor-pointer" onClick={handleNextTab}>
                 <img
                     src={rightArrow}
-                    className=" ml-3 h-6 w-4"
+                    className="h-8 w-6 ml-3"
                     alt="Right Arrow"
                 />
             </div>

@@ -3,18 +3,16 @@
 @tailwind utilities;
 
 .tabs-container {
-  padding: 0 20px;
     margin-top: 12px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid gray;
-    overflow: hidden;
 }
 
 .tabs {
     list-style: none;
     display: flex;
-    gap: 4px;
+    gap: 10px;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -24,6 +22,7 @@
 .tab {
     padding: 4px 8px;
     cursor: pointer;
+
     transition: background-color 0.3s;
 }
 
