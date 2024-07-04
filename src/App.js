@@ -18,11 +18,13 @@ function App() {
             value: "IntractiveReports",
             label: "Intractive Reports ",
             icon: <TbReportSearch className="h-10 w-10" />,
+
         },
         {
             value: "PlayGround",
             label: "PlayGround",
             icon: <CgDisplayGrid className="h-10 w-10" />,
+
         },
         {
             value: "FileChanges",
@@ -38,11 +40,13 @@ function App() {
             value: "Docunmentation",
             label: "Docunmentation",
             icon: <IoDocumentAttach className="h-10 w-10" />,
+
         },
         {
             value: "CustomerStories",
             label: "Customer Stories",
             icon: <MdAutoStories className="h-10 w-10" />,
+
         },
         {
             value: "GroupAnaytics",
@@ -58,6 +62,7 @@ function App() {
             value: "Portals",
             label: "Portals",
             icon: <AiFillCustomerService className="h-10 w-10" />,
+
         },
     ];
 

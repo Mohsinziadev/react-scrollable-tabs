@@ -1,9 +1,31 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { leftArrow, rightArrow } from "../assets/img";
 
-const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className }) => {
+const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className , qty }) => {
     const tabsRef = useRef(null);
+     const [colors, setColors] = useState([]);
+
+     useEffect(() => {
+
+         const predefinedColors = [
+             "#FF5733",
+             "#33FF57",
+             "#3357FF",
+             "#FF33A5",
+             "#A533FF",
+             "#FF8C33",
+             "#33FFC5",
+             "#8C33FF",
+             "#FF3385",
+             "#33FF95",
+         ];
+         const initialColors = tabs.map(
+             (_, index) => predefinedColors[index % predefinedColors.length]
+         );
+         setColors(initialColors);
+     }, [tabs]);
+
 
     const handleTabClick = (tab) => {
         const tabElement = tabsRef.current.querySelector(
@@ -48,6 +70,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className }) => {
         }
     };
 
+
     return (
         <div className="tabs-container">
             <div className="cursor-pointer" onClick={handlePrevTab}>
@@ -58,7 +81,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className }) => {
                 />
             </div>
             <ul className="tabs" ref={tabsRef}>
-                {tabs.map((tab) => (
+                {tabs.map((tab, index) => (
                     <li
                         key={tab.value}
                         className={`tab  ${className} ${
@@ -68,7 +91,17 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className }) => {
                         data-tab={tab.value}
                     >
                         <div>{tab.icon}</div>
-                        <div>{tab.label}</div>
+                        <div className="flex gap-2 items-center ">
+                            {tab.label}
+                            {tab.qty &&
+                                <span
+                                    className="px-[4px] py-[2px] text-white rounded-lg text-xs font-light"
+                                    style={{ backgroundColor: colors[index] }}
+                                >
+                                    {tab.qty}
+                                </span>
+                            }
+                        </div>
                     </li>
                 ))}
             </ul>
