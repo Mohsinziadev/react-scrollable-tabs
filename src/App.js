@@ -63,18 +63,37 @@ function App() {
 
     return (
         <div className="flex flex-col">
-            <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-20 border rounded-xs ">
-                <ScrollableTabs
-                    tabs={tabs}
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                />
+            <div className="flex flex-col">
+                <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-20 border rounded-xs ">
+                    <ScrollableTabs
+                        tabs={tabs}
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                        className="flex flex-col gap-2  items-center justify-center"
+                    />
+                </div>
+                <div className="flex items-center justify-center mt-10 text-lg ">
+                    <span className="font-light  text-gray-400  pr-2">
+                        Selected Item :
+                    </span>
+                    {activeTab}
+                </div>
             </div>
-            <div className="flex items-center justify-center mt-10 text-lg ">
-                <span className="font-light  text-gray-400  pr-2">
-                    Selected Item :
-                </span>
-                {activeTab}
+            <div className="flex flex-col">
+                <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-20 border rounded-xs ">
+                    <ScrollableTabs
+                        tabs={tabs}
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                        className="flex flex-row gap-2  items-center justify-center"
+                    />
+                </div>
+                <div className="flex items-center justify-center mt-10 text-lg ">
+                    <span className="font-light  text-gray-400  pr-2">
+                        Selected Item :
+                    </span>
+                    {activeTab}
+                </div>
             </div>
         </div>
     );

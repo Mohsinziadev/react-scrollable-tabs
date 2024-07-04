@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 import { leftArrow, rightArrow } from "../assets/img";
 
-const ScrollableTabs = ({ tabs, activeTab, setActiveTab }) => {
+const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className }) => {
     const tabsRef = useRef(null);
 
     const handleTabClick = (tab) => {
@@ -61,14 +61,14 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab }) => {
                 {tabs.map((tab) => (
                     <li
                         key={tab.value}
-                        className={`tab flex flex-col items-center justify-center  gap-2 ${
+                        className={`tab  ${className} ${
                             activeTab === tab.value ? "active" : ""
                         }`}
                         onClick={() => handleTabClick(tab)}
                         data-tab={tab.value}
                     >
                         <div>{tab.icon}</div>
-                        {tab.label}
+                        <div>{tab.label}</div>
                     </li>
                 ))}
             </ul>
