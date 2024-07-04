@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ScrollableTabs from "./components/ScrollableTabs";
-
 import { TbReportSearch } from "react-icons/tb";
 import { CgDisplayGrid } from "react-icons/cg";
 import { FaFileContract } from "react-icons/fa";
@@ -12,52 +11,52 @@ import { GiRugbyConversion } from "react-icons/gi";
 import { AiFillCustomerService } from "react-icons/ai";
 
 function App() {
-    let [activeTab, setActiveTab] = useState("activeOrders");
+    let [activeTab, setActiveTab] = useState("IntractiveReports");
     // Your tab list
     const tabs = [
         {
-            value: "activeOrders",
+            value: "IntractiveReports",
             label: "Intractive Reports ",
             icon: <TbReportSearch className="h-10 w-10" />,
         },
         {
-            value: "completedOrders",
+            value: "PlayGround",
             label: "PlayGround",
             icon: <CgDisplayGrid className="h-10 w-10" />,
         },
         {
-            value: "cancelledOrders",
-            label: "File Changes  ",
+            value: "FileChanges",
+            label: "File Changes",
             icon: <FaFileContract className="h-10 w-10" />,
         },
         {
-            value: "WaitingResponse",
+            value: "LimitLessSegementation",
             label: "LimitLess Segementation",
             icon: <PiLineSegmentsDuotone className="h-10 w-10" />,
         },
         {
-            value: "PendingApproval",
+            value: "Docunmentation",
             label: "Docunmentation",
             icon: <IoDocumentAttach className="h-10 w-10" />,
         },
         {
-            value: "Declined",
+            value: "CustomerStories",
             label: "Customer Stories",
             icon: <MdAutoStories className="h-10 w-10" />,
         },
         {
-            value: "RoutedOffers",
-            label: "Group Anaytics ",
+            value: "GroupAnaytics",
+            label: "Group Anaytics",
             icon: <TbBrandGoogleAnalytics className="h-10 w-10" />,
         },
         {
-            value: "DisputedOrders",
+            value: "Conversion",
             label: "Conversion",
             icon: <GiRugbyConversion className="h-10 w-10" />,
         },
         {
-            value: "CounterOffers",
-            label: "Customer Stories ",
+            value: "Portals",
+            label: "Portals",
             icon: <AiFillCustomerService className="h-10 w-10" />,
         },
     ];
