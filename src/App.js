@@ -10,9 +10,71 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { GiRugbyConversion } from "react-icons/gi";
 import { AiFillCustomerService } from "react-icons/ai";
 
+import { FiUserCheck, FiSettings } from "react-icons/fi";
+import { FaChartLine, FaProjectDiagram } from "react-icons/fa";
+import { BiTask, BiSupport } from "react-icons/bi";
+import { MdDashboard, MdNotificationsActive } from "react-icons/md";
+import { IoMdChatbubbles } from "react-icons/io";
+
+import {
+    GiTreasureMap,
+    GiArtificialIntelligence,
+    GiRadarSweep,
+} from "react-icons/gi";
+
 function App() {
     let [activeTab, setActiveTab] = useState("IntractiveReports");
+        let [activeTab1, setActiveTab1] = useState("UserManagement");
     // Your tab list
+
+
+const tabsList = [
+    {
+        value: "UserManagement",
+        label: "User Management",
+        icon: <FiUserCheck className="h-10 w-10" />,
+    },
+    {
+        value: "Settings",
+        label: "Settings",
+        icon: <FiSettings className="h-10 w-10" />,
+    },
+    {
+        value: "Exploration",
+        label: "Exploration",
+        icon: <GiArtificialIntelligence className="h-10 w-10" />,
+    },
+    {
+        value: "Projects",
+        label: "Projects",
+        icon: <FaProjectDiagram className="h-10 w-10" />,
+    },
+    {
+        value: "Tasks",
+        label: "Tasks",
+        icon: <BiTask className="h-10 w-10" />,
+    },
+    {
+        value: "Support",
+        label: "Support",
+        icon: <BiSupport className="h-10 w-10" />,
+    },
+    {
+        value: "Dashboard",
+        label: "Dashboard",
+        icon: <MdDashboard className="h-10 w-10" />,
+    },
+    {
+        value: "Notifications",
+        label: "Notifications",
+        icon: <MdNotificationsActive className="h-10 w-10" />,
+    },
+    {
+        value: "Chat",
+        label: "Chat",
+        icon: <IoMdChatbubbles className="h-10 w-10" />,
+    },
+];
     const tabs = [
         {
             value: "IntractiveReports",
@@ -87,9 +149,9 @@ function App() {
             <div className="flex flex-col">
                 <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-20 border rounded-xs ">
                     <ScrollableTabs
-                        tabs={tabs}
-                        activeTab={activeTab}
-                        setActiveTab={setActiveTab}
+                        tabs={tabsList}
+                        activeTab={activeTab1}
+                        setActiveTab={setActiveTab1}
                         className="flex flex-row gap-2  items-center justify-center"
                     />
                 </div>
@@ -97,7 +159,7 @@ function App() {
                     <span className="font-light  text-gray-400  pr-2">
                         Selected Item :
                     </span>
-                    {activeTab}
+                    {activeTab1}
                 </div>
             </div>
         </div>
