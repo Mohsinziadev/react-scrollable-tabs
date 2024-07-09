@@ -80,18 +80,18 @@ const tabsList = [
             value: "IntractiveReports",
             label: "Intractive Reports ",
             icon: <TbReportSearch className="h-10 w-10" />,
-
+            qty: 14,
         },
         {
             value: "PlayGround",
             label: "PlayGround",
             icon: <CgDisplayGrid className="h-10 w-10" />,
-
         },
         {
             value: "FileChanges",
             label: "File Changes",
             icon: <FaFileContract className="h-10 w-10" />,
+            qty: 10,
         },
         {
             value: "LimitLessSegementation",
@@ -102,13 +102,11 @@ const tabsList = [
             value: "Docunmentation",
             label: "Docunmentation",
             icon: <IoDocumentAttach className="h-10 w-10" />,
-
         },
         {
             value: "CustomerStories",
             label: "Customer Stories",
             icon: <MdAutoStories className="h-10 w-10" />,
-
         },
         {
             value: "GroupAnaytics",
@@ -124,7 +122,6 @@ const tabsList = [
             value: "Portals",
             label: "Portals",
             icon: <AiFillCustomerService className="h-10 w-10" />,
-
         },
     ];
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { leftArrow, rightArrow } from "../assets/img";
 
-const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className , qty }) => {
+const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className  }) => {
     const tabsRef = useRef(null);
      const [colors, setColors] = useState([]);
 
@@ -38,6 +38,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className , qty }) => {
         setActiveTab(tab.value);
     };
 
+
     const handleNextTab = () => {
         const currentIndex = tabs.findIndex((tab) => tab.value === activeTab);
         const nextTab = tabs[currentIndex + 1];
@@ -54,6 +55,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className , qty }) => {
         }
     };
 
+
     const handlePrevTab = () => {
         const currentIndex = tabs.findIndex((tab) => tab.value === activeTab);
         const prevTab = tabs[currentIndex - 1];
@@ -69,6 +71,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className , qty }) => {
             setActiveTab(prevTab.value);
         }
     };
+
 
 
     return (
@@ -95,7 +98,7 @@ const ScrollableTabs = ({ tabs, activeTab, setActiveTab, className , qty }) => {
                             {tab.label}
                             {tab.qty &&
                                 <span
-                                    className="px-[4px] py-[2px] text-white rounded-lg text-xs font-light"
+                                    className="px-[4px] w-[22px] py-[2px] text-white rounded-lg text-xs font-light"
                                     style={{ backgroundColor: colors[index] }}
                                 >
                                     {tab.qty}
