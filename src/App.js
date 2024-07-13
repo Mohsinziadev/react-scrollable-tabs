@@ -135,7 +135,8 @@ const tabsList = [
             <div className="flex flex-col max-w-[1200px] gap-0">
                 <div className="flex py-10 gap-4 items-center justify-center ">
                     <h3 className="font-semibold text-lg  ">
-                        Set Position of React-Tw-Tabs :
+                        {/* Set Position of React-Tw-Tabs : */}
+                        Set Position of React-Smooth-Tabs :
                     </h3>
                     <div className="flex ">
                         <button
