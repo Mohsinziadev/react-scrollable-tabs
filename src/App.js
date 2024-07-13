@@ -15,16 +15,21 @@ import { FaChartLine, FaProjectDiagram } from "react-icons/fa";
 import { BiTask, BiSupport } from "react-icons/bi";
 import { MdDashboard, MdNotificationsActive } from "react-icons/md";
 import { IoMdChatbubbles } from "react-icons/io";
+import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import leftSwipeIcon from "./assets/img/leftIconSwipe.png";
+import RightSwipeIcon from "./assets/img/rightIconSwipe.png"
+import swipeIcon from "./assets/img/Swipeicon.png";
+
+import { leftArrow, rightArrow } from "./assets/img";
 
 import {
-    GiTreasureMap,
     GiArtificialIntelligence,
-    GiRadarSweep,
 } from "react-icons/gi";
 
 function App() {
     let [activeTab, setActiveTab] = useState("IntractiveReports");
         let [activeTab1, setActiveTab1] = useState("UserManagement");
+        let [selectedtab, setSelectedTab] = useState("Horizontal");
     // Your tab list
 
 
@@ -126,38 +131,78 @@ const tabsList = [
     ];
 
     return (
-        <div className="flex flex-col">
-            <div className="flex flex-col">
-                <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-20 border rounded-xs ">
-                    <ScrollableTabs
-                        tabs={tabs}
-                        activeTab={activeTab}
-                        setActiveTab={setActiveTab}
-                        className="flex flex-col gap-2  items-center justify-center"
-                    />
+        <div className="flex w-full justify-center items-center pb-20 ">
+            <div className="flex flex-col max-w-[1200px] gap-0">
+                <div className="flex py-10 gap-4 items-center justify-center ">
+                    <h3 className="font-semibold text-lg  ">
+                        Set Position of React-Tw-Tabs :
+                    </h3>
+                    <div className="flex ">
+                        <button
+                            onClick={() => setSelectedTab("Horizontal")}
+                            className={`flex px-4 py-2 rounded-tl-md rounded-bl-md shadow-lg    ${
+                                selectedtab === "Horizontal"
+                                    ? "bg-[#dd7973] text-white"
+                                    : "bg-white text-black"
+                            }`}
+                        >
+                            Horizontal
+                        </button>
+                        <button
+                            onClick={() => setSelectedTab("vertical")}
+                            className={`flex px-4 py-2 rounded-tr-md rounded-br-md shadow-lg    ${
+                                selectedtab === "vertical"
+                                    ? "bg-[#dd7973] text-white"
+                                    : "bg-white text-black"
+                            }`}
+                        >
+                            Vertical
+                        </button>
+                    </div>
                 </div>
-                <div className="flex items-center justify-center mt-10 text-lg ">
-                    <span className="font-light  text-gray-400  pr-2">
-                        Selected Item :
-                    </span>
-                    {activeTab}
-                </div>
-            </div>
-            <div className="flex flex-col">
-                <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-20 border rounded-xs ">
-                    <ScrollableTabs
-                        tabs={tabsList}
-                        activeTab={activeTab1}
-                        setActiveTab={setActiveTab1}
-                        className="flex flex-row gap-2  items-center justify-center"
-                    />
-                </div>
-                <div className="flex items-center justify-center mt-10 text-lg ">
-                    <span className="font-light  text-gray-400  pr-2">
-                        Selected Item :
-                    </span>
-                    {activeTab1}
-                </div>
+                {selectedtab === "Horizontal" ? (
+                    <div className="flex flex-col">
+                        <div className="max-w-6xl w-[90%] px-12 mx-auto relative mt-10 border rounded-xs ">
+                            <ScrollableTabs
+                                tabs={tabs}
+                                activeTab={activeTab}
+                                setActiveTab={setActiveTab}
+                                position="Horizontal"
+                                displayArrows={true}
+                                leftArrow={swipeIcon}
+                                rightArrow={swipeIcon}
+                                className="flex flex-col gap-2  items-center justify-center"
+                            />
+                        </div>
+                        <div className="flex items-center justify-center mt-10 text-lg ">
+                            <span className="font-light  text-gray-400  pr-2">
+                                Selected Item :
+                            </span>
+                            {activeTab}
+                        </div>
+                    </div>
+                ) : (
+                    <div className="flex gap-4">
+                        <div className="max-w-6xl  px-12 mx-auto relative mt-2 border rounded-xs ">
+                            <ScrollableTabs
+                                tabs={tabsList}
+                                activeTab={activeTab1}
+                                setActiveTab={setActiveTab1}
+                                displayArrows={true}
+                                leftArrow={swipeIcon}
+                                rightArrow={swipeIcon}
+                                position="vertical"
+                                className="flex flex-row gap-2  items-center justify-center"
+                            />
+                        </div>
+                        <div className="flex w-[20rem] items-center justify-center mt-10 text-lg ">
+                            <span className="font-light min-w-fit text-gray-400  pr-2">
+                                Selected Item :
+                            </span>
+                            {activeTab1}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
