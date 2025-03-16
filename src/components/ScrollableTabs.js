@@ -4,6 +4,8 @@ const ScrollableTabs = ({
     tabs,
     activeTab,
     setActiveTab,
+    activeColor,
+    lineColor,
     className,
     position,
     displayArrows,
@@ -11,26 +13,6 @@ const ScrollableTabs = ({
     rightArrow,
 }) => {
     const tabsRef = useRef(null);
-    const [colors, setColors] = useState([]);
-
-    useEffect(() => {
-        const predefinedColors = [
-            "#FF5733",
-            "#33FF57",
-            "#3357FF",
-            "#FF33A5",
-            "#A533FF",
-            "#FF8C33",
-            "#33FFC5",
-            "#8C33FF",
-            "#FF3385",
-            "#33FF95",
-        ];
-        const initialColors = tabs.map(
-            (_, index) => predefinedColors[index % predefinedColors.length]
-        );
-        setColors(initialColors);
-    }, [tabs]);
 
     const handleTabClick = (tab) => {
         const tabElement = tabsRef.current.querySelector(
@@ -77,17 +59,17 @@ const ScrollableTabs = ({
 
     return (
         <div
-            className={`mt-[12px] flex items-center ${
-                position === "Horizontal"
-                    ? "border-b border-gray-500"
-                    : "border-none"
-            }`}
+            className="mt-[12px] flex items-center"
+            style={{
+                borderColor: lineColor || "gray",
+                borderBottomWidth: position === "Horizontal" ? "2px" : "0px",
+            }}
         >
             {displayArrows && position === "Horizontal" && (
                 <div className="cursor-pointer" onClick={handlePrevTab}>
                     <img
                         src={leftArrow}
-                        className="h-10 w-10 mr-10 rotate-180"
+                        className="h-10 w-10 mr-10"
                         alt="Left Arrow"
                     />
                 </div>
@@ -104,21 +86,31 @@ const ScrollableTabs = ({
                 {tabs.map((tab, index) => (
                     <li
                         key={tab.value}
-                        className={`tab flex !justify-start ${className} ${
-                            activeTab === tab.value ? "active" : ""
-                        }`}
+                        className={`tab flex !justify-start ${className}`}
                         onClick={() => handleTabClick(tab)}
                         data-tab={tab.value}
+                        style={{
+                            fontWeight:
+                                activeTab === tab.value ? 600 : "normal",
+                            color:
+                                activeTab === tab.value
+                                    ? activeColor
+                                    : "inherit",
+                            borderBottom:
+                                activeTab === tab.value
+                                    ? `2px solid ${activeColor}`
+                                    : "none",
+                        }}
                     >
                         <div>{tab.icon}</div>
-                        <div className="flex gap-2 items-center ">
+                        <div className="flex gap-2 items-center text-[12px] font-light ">
                             {tab.label}
                             {tab.qty && (
                                 <span
-                                    className="px-[4px] w-fit py-[2px] text-white rounded-lg text-xs font-light"
-                                    style={{ backgroundColor: colors[index] }}
+                                    className="p-[2px] h-[16px] w-[16px] text-white rounded-full items-center justify-center flex text-[8px] font-light"
+                                    style={{ backgroundColor: tab?.qty?.color }}
                                 >
-                                    {tab.qty}
+                                    {tab?.qty?.value}
                                 </span>
                             )}
                         </div>
@@ -132,7 +124,7 @@ const ScrollableTabs = ({
                         >
                             <img
                                 src={rightArrow}
-                                className="h-10 w-10 -rotate-90"
+                                className="h-6 w-6 -rotate-90"
                                 alt="Left Arrow"
                             />
                         </div>
@@ -142,7 +134,7 @@ const ScrollableTabs = ({
                         >
                             <img
                                 src={leftArrow}
-                                className="h-10 w-10 rotate-90"
+                                className="h-6 w-6 -rotate-90"
                                 alt="Left Arrow"
                             />
                         </div>
