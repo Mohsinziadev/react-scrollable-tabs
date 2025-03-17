@@ -27,7 +27,7 @@ function App() {
     let [activeTab1, setActiveTab1] = useState("UserManagement");
     let [selectedtab, setSelectedTab] = useState("Horizontal");
 
-    let [activeTabQTY, setActiveTabQTY] = useState("UserManagement");
+    let [activeTabQTY, setActiveTabQTY] = useState("IntractiveReports");
 
     const tabsWithoutQTY = [
         {
