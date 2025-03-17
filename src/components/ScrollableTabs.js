@@ -61,7 +61,7 @@ const ScrollableTabs = ({
         <div
             className="mt-[12px] flex items-center"
             style={{
-                borderColor: lineColor || "gray",
+                borderColor: lineColor || "",
                 borderBottomWidth: position === "Horizontal" ? "2px" : "0px",
             }}
         >

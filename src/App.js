@@ -174,12 +174,12 @@ function App() {
                         <div>
                             <div className="flex justify-between px-16">
                                 <div className="flex items-center justify-center mt-10 text-lg text-[14px] ">
-                                    <span className="font-light    pr-2">
-                                        Horizontal Tabs without Qty
+                                    <span className="font-light text-[16px]   pr-2">
+                                        Horizontal Tabs without Quantity
                                     </span>
                                 </div>
-                                <div className="flex items-center justify-center mt-10 text-lg text-[14px] ">
-                                    <span className="font-light     pr-2">
+                                <div className="flex items-center justify-center mt-10  text-[14px] ">
+                                    <span className="font-light  pr-2">
                                         Selected Item :
                                     </span>
                                     <div className="text-gray-400">
@@ -193,7 +193,7 @@ function App() {
                                     activeTab={activeTab}
                                     setActiveTab={setActiveTab}
                                     activeColor="#008080"
-                                    lineColor="#008080"
+                                    // lineColor="#008080"
                                     position="Horizontal"
                                     displayArrows={true}
                                     leftArrow={leftArowIcon}
@@ -205,11 +205,11 @@ function App() {
                         <div>
                             <div className="flex justify-between px-16 mt-10">
                                 <div className="flex items-center justify-center mt-10 text-lg text-[14px] ">
-                                    <span className="font-light    pr-2">
-                                        Horizontal Tabs with Qty
+                                    <span className="font-light text-[16px] pr-2">
+                                        Horizontal Tabs with Quantity
                                     </span>
                                 </div>
-                                <div className="flex items-center justify-center mt-10 text-lg text-[14px] ">
+                                <div className="flex items-center justify-center mt-10 text-[14px] ">
                                     <span className="font-light     pr-2">
                                         Selected Item :
                                     </span>
@@ -224,7 +224,7 @@ function App() {
                                     activeTab={activeTabQTY}
                                     setActiveTab={setActiveTabQTY}
                                     activeColor="#6A67BF"
-                                    lineColor="#6A67BF"
+                                    // lineColor="#6A67BF"
                                     position="Horizontal"
                                     displayArrows={true}
                                     leftArrow={leftArowIcon}
