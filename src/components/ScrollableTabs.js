@@ -76,7 +76,7 @@ const ScrollableTabs = ({
             )}
 
             <ul
-                className={`tabs  ${
+                className={`CustomeTabs  ${
                     position === "Horizontal"
                         ? "flex flex-row  "
                         : "flex flex-col"
@@ -86,7 +86,7 @@ const ScrollableTabs = ({
                 {tabs.map((tab, index) => (
                     <li
                         key={tab.value}
-                        className={`tab flex !justify-start ${className}`}
+                        className={`CustomTab flex !justify-start ${className}`}
                         onClick={() => handleTabClick(tab)}
                         data-tab={tab.value}
                         style={{

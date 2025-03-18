@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.tabs {
+.CustomeTabs {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -12,13 +12,13 @@
     white-space: nowrap;
 }
 
-.tab {
+.CustomTab {
     padding: 4px 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.tab.active {
+.CustomTab.active {
     font-weight: 600;
     color: #008080;
     border-bottom: 2px solid #008080;
